@@ -2,7 +2,6 @@ package timer
 
 import (
 	"errors"
-
 	"sync"
 	"time"
 

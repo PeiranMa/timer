@@ -3,8 +3,8 @@ package timer_test
 import (
 	"testing"
 	"time"
-	"timer"
 
+	"github.com/PeiranMa/timer"
 	"github.com/google/uuid"
 )
 
