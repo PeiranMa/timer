@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/PeiranMa/timer"
 	"github.com/RussellLuo/timingwheel"
 	"github.com/google/uuid"
-	"timer"
 )
 
 func genD(i int) time.Duration {

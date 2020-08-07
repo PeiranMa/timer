@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/PeiranMa/timer"
 	"github.com/google/uuid"
-	"timer"
 )
 
 func TestTimeWheelTimer_RemoveFunc(t *testing.T) {

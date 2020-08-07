@@ -1,4 +1,4 @@
-module timer
+module github.com/PeiranMa/timer
 
 go 1.14
 
