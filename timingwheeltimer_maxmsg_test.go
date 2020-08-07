@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/PeiranMa/timer"
 	"github.com/google/uuid"
+	"timer"
 )
 
 func TestSimpleTimer(t *testing.T) {
