@@ -49,14 +49,14 @@ func (m *Message) SetID(id timer.ItemID) {
 	return
 }
 
-func timeoutGenerator(distribution string) int {
+func timeoutGenerator(distribution string, timeRange int) int {
 	switch {
 	case distribution == "exp":
 		rand.Seed(time.Now().UnixNano())
 		preNum := rand.Intn(600) + 1
 		x := math.Log(float64(preNum))
-		x = (1 - x/math.Log(601)) * 60
-		// math.P
+		x = (1 - x/math.Log(601)) * float64(timeRange)
+
 		return int(x)
 	case distribution == "uniform":
 		rand.Seed(time.Now().UnixNano())

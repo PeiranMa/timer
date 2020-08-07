@@ -9,7 +9,7 @@ import (
 	"github.com/google/uuid"
 )
 
-func Twt(num int, tickDuration time.Duration) {
+func Twt(num int, tickDuration time.Duration, distribution string, timeRange int) {
 	twt := timer.NewTimeWheelTimer(time.Millisecond, 20)
 
 	twt.Start()
@@ -25,7 +25,7 @@ func Twt(num int, tickDuration time.Duration) {
 				msg := &Message{
 					ID:              timer.ItemID(uuid.New()),
 					TickDuration:    tickDuration * time.Second,
-					TimeoutDuration: time.Duration(timeoutGenerator("uniform")) * time.Second,
+					TimeoutDuration: time.Duration(timeoutGenerator(distribution, timeRange)) * time.Second,
 				}
 
 				twt.Add(msg)

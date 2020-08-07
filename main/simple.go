@@ -9,7 +9,7 @@ import (
 	"github.com/google/uuid"
 )
 
-func Simple(num int, tickDuration time.Duration) {
+func Simple(num int, tickDuration time.Duration, distribution string, timeRange int) {
 	st := timer.NewSimpleTimer()
 
 	ticker := time.NewTicker(time.Second)
@@ -22,7 +22,7 @@ func Simple(num int, tickDuration time.Duration) {
 				msg := &Message{
 					ID:              timer.ItemID(uuid.New()),
 					TickDuration:    tickDuration * time.Second,
-					TimeoutDuration: time.Duration(timeoutGenerator("exp")) * time.Second,
+					TimeoutDuration: time.Duration(timeoutGenerator(distribution, timeRange)) * time.Second,
 				}
 
 				st.Add(msg)

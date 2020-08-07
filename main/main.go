@@ -5,10 +5,12 @@ import (
 )
 
 func main() {
-	num := 64000
+	num := 4000
 	tickD := time.Duration(1)
+	distribution := "exp"
+	timeRange := 60
 
-	// Twt(num, tickD)
-	Simple(num, tickD)
+	// Twt(num, tickD, distribution, timeRange)
+	Simple(num, tickD, distribution, timeRange)
 
 }
