@@ -24,7 +24,7 @@ func TestSimpleTimer(t *testing.T) {
 	}
 	timeoutDuration := 10 * time.Second
 
-	msgCount := 10000000
+	msgCount := 100000
 	t.Run("", func(t *testing.T) {
 		C := make(chan timer.ItemID)
 		exitChan := make(chan int)
@@ -65,7 +65,7 @@ func TestSimpleTimer(t *testing.T) {
 
 }
 
-func Testtimer(t *testing.T) {
+func TestTimeWheelTimer(t *testing.T) {
 	twt := timer.NewTimeWheelTimer(time.Millisecond, 20)
 	twt.Start()
 	defer twt.Stop()
