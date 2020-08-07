@@ -75,7 +75,7 @@ func BenchmarkStandardTimer_StartStop(b *testing.B) {
 	}
 }
 
-func Benchmarktimer_StartStop(b *testing.B) {
+func BenchmarkTimeWheelTimer_StartStop(b *testing.B) {
 	twt := timer.NewTimeWheelTimer(time.Millisecond, 20)
 	twt.Start()
 	defer twt.Stop()

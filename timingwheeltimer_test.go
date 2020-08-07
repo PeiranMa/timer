@@ -8,7 +8,7 @@ import (
 	"timer"
 )
 
-func Testtimer_RemoveFunc(t *testing.T) {
+func TestTimeWheelTimer_RemoveFunc(t *testing.T) {
 	twt := timer.NewTimeWheelTimer(time.Millisecond, 20)
 	twt.Start()
 	defer twt.Stop()
@@ -38,7 +38,7 @@ func Testtimer_RemoveFunc(t *testing.T) {
 
 }
 
-func Testtimer_AddFunc(t *testing.T) {
+func TestTimeWheelTimer_AddFunc(t *testing.T) {
 	twt := timer.NewTimeWheelTimer(time.Millisecond, 20)
 
 	twt.Start()
@@ -189,7 +189,7 @@ func TestSimpleTimer_AddFunc(t *testing.T) {
 
 			min := start.Add(timeoutDuration).Truncate(time.Millisecond)
 
-			if got.Before(min) || got.After(min.Add(d/2).Add(err)) {
+			if got.Before(min) || got.After(min.Add(d).Add(err)) {
 				t.Errorf("Timeout(%s) expiration: want [%s, %s], got %s", d, min, min.Add(d).Add(err), got)
 			}
 

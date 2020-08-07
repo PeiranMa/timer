@@ -82,7 +82,7 @@ func TestTimeWheelTimer(t *testing.T) {
 	}
 	timeoutDuration := 10 * time.Second
 
-	msgCount := 10000000
+	msgCount := 1000000
 	t.Run("", func(t *testing.T) {
 		C := make(chan timer.ItemID)
 		exitChan := make(chan int)
